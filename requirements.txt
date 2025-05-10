@@ -1,0 +1,22 @@
+beautifulsoup4==4.13.4     # HTML parsing and web scraping — used to extract hospital metadata from web pages
+certifi==2025.1.31         # Ensures secure HTTPS requests — provides trusted root certificates
+charset-normalizer==3.4.1  # Detects and handles text encodings — used under the hood in HTTP responses
+et_xmlfile==2.0.0          # Writes Excel-compatible XML — used by openpyxl to generate .xlsx files
+idna==3.10                 # Handles internationalized domain names — ensures compatibility in web requests
+ijson==3.3.0               # Stream large JSON files efficiently — parses hospital MRFs without loading full files in memory
+loguru==0.7.2        	   # Clean, structured logging — readable logs with timestamps, levels, and tracebacks
+lxml==5.2.1                # Fast, robust HTML/XML parsing — improves scraping stability and speed
+numpy==2.2.4               # Core numerical computing — speeds up transformations and data prep
+openpyxl==3.1.5            # Reads and writes Excel files — used to extract data from hospital spreadsheets
+pandas==2.2.3              # Data wrangling and analysis — the backbone of your ETL transforms
+psycopg2-binary==2.9.10    # PostgreSQL database connector — sends cleaned data into your managed DB
+python-dateutil==2.9.0     # Smarter date/time parsing — handles date normalization and conversions
+python-dotenv==1.1.0       # Loads environment variables from .env — keeps secrets/configs out of code
+pytz==2025.2               # Time zone conversions — ensures datetime consistency across sources
+pyyaml==6.0.1       	   # Reading config.yaml files — helps manage pipeline settings from external files
+requests==2.32.3           # Makes HTTP requests — fetches hospital web pages and MRF download links
+six==1.17.0                # Compatibility layer between Python 2 & 3 — needed by some libraries, safe to leave
+soupsieve==2.7             # Used by BeautifulSoup for CSS-style selectors — improves HTML element targeting
+typing_extensions==4.13.2  # Backports newer typing features — supports type hints in older Python versions
+tzdata==2025.2             # Time zone database — helps pytz with accurate timezone handling
+urllib3==2.4.0             # Low-level HTTP library — used by requests for reliable web communication

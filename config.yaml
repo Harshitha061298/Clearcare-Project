@@ -1,0 +1,45 @@
+cities:
+  - name: Atlanta
+    state: GA
+  - name: Phoenix
+    state: AZ
+  - name: Denver
+    state: CO
+
+output_file: "Hospital Registry.xlsx"
+sleep_between_requests: 1
+
+leapfrog:
+  base_api_url: "https://blink.atlasworks.com/api/v01/searchResult/HospitalLocations20241101/SearchResults"
+  base_hospital_url: "https://www.hospitalsafetygrade.org"
+
+cms:
+  hospital_info_api: "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0"
+
+extract:
+  allowed_code_types:
+    - CPT
+    - HCPCS
+    - ICD
+    - DRG
+    - CDT
+    - NDC
+    - APC
+
+  code_type_normalization:
+    CPT: CPT
+    HCPCS: HCPCS
+    ICD: ICD
+    MS-DRG: DRG
+    DRG: DRG
+    CDT: CDT
+    NDC: NDC
+    APC: APC
+
+modifiers:
+  22: "Increased procedural service"
+  26: "Professional component only"
+  TC: "Technical component only"
+  59: "Distinct procedural service"
+  76: "Repeat procedure by same provider"
+  JW: "Drug amount discarded/not administered to any patient"
